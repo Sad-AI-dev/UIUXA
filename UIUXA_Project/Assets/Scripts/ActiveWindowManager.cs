@@ -4,33 +4,34 @@ using UnityEngine;
 
 public class ActiveWindowManager : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> windows;
+    [SerializeField] private GameObject canvas;
+    [SerializeField] private GameObject startWindow;
 
     //vars
-    GameObject currentWindow;
-    Stack<GameObject> windowStack;
+    private GameObject currentWindow;
+    private Stack<GameObject> windowStack;
 
     private void Start()
     {
-        HideWindows();
+        HideAllWindows();
         //initialize vars
-        windows[0].SetActive(true);
-        currentWindow = windows[0];
-        windowStack = new Stack<GameObject>(new[] { windows[0] });
+        startWindow.SetActive(true);
+        currentWindow = startWindow;
+        windowStack = new Stack<GameObject>(new[] { startWindow });
     }
 
     //--------------got to new screen--------------
     public void SwitchToSubScreen(GameObject target)
     {
         SetWindowActive(target);
-        windowStack.Push(currentWindow);
+        windowStack.Push(target);
         currentWindow = target;
     }
 
     public void ReturnToLastScreen()
     {
-        SetWindowActive(windowStack.Peek());
         if (windowStack.Count > 1) { windowStack.Pop(); }
+        SetWindowActive(windowStack.Peek());
         currentWindow = windowStack.Peek();
 
     }
@@ -38,18 +39,20 @@ public class ActiveWindowManager : MonoBehaviour
     //------------switch screen--------------
     private void SetWindowActive(GameObject target)
     {
-        if (windows.Contains(target)) {
-            HideWindows();
-            windows[windows.IndexOf(target)].SetActive(true);
-        }
+        HideLastWindow();
+        target.SetActive(true);
     }
 
-    private void HideWindows()
+    private void HideLastWindow()
     {
-        foreach (GameObject window in windows) {
-            if (window.activeSelf) {
-                window.SetActive(false);
-            }
+        currentWindow.SetActive(false);
+    }
+
+    //----------hide all screens-------
+    private void HideAllWindows()
+    {
+        foreach (Transform t in canvas.transform) {
+            t.gameObject.SetActive(false);
         }
     }
 }
