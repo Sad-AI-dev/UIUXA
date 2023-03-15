@@ -14,6 +14,7 @@ public class CardObj : MonoBehaviour
     public TMP_Text description;
     public TMP_Text damageLabel;
     public TMP_Text healthLabel;
+    public GameObject unownedOverlay;
 
     public void Start()
     {
@@ -33,5 +34,10 @@ public class CardObj : MonoBehaviour
         description.text = cardData.description;
         healthLabel.text = cardData.health.ToString();
         damageLabel.text = cardData.power.ToString();
+    }
+
+    public void ShowUnowned()
+    {
+        unownedOverlay.SetActive(true);
     }
 }
