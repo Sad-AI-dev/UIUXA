@@ -1,0 +1,13 @@
+==Main Colors==
+very dark:	#14151F
+dark:		#283647
+white:		#FFFFFF
+blue:		#21AEED
+pink:		#ED61A5
+
+==Rarity Colors==
+5 star:		#FF9B49
+4 star:		#BA49FF
+3 star:		#497DFF
+2 star:		#54CF46
+1 star:		#BBBBBB
