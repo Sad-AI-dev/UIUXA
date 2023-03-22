@@ -7,8 +7,10 @@ using TMPro;
 public class CardObj : MonoBehaviour
 {
     public CardSO cardData;
+    [SerializeField] private List<Color> rarityColors = new List<Color>(5);
 
     [Header("Object Refs")]
+    public Image border;
     public Image visuals;
     public TMP_Text nameLabel;
     public TMP_Text description;
@@ -29,11 +31,17 @@ public class CardObj : MonoBehaviour
 
     private void BuildCard()
     {
+        SetBorderColor();
         visuals.sprite = cardData.sprite;
         nameLabel.text = cardData.title;
         description.text = cardData.description;
         healthLabel.text = cardData.health.ToString();
         damageLabel.text = cardData.power.ToString();
+    }
+
+    private void SetBorderColor()
+    {
+        border.color = rarityColors[(int)cardData.rarity];
     }
 
     public void ShowUnowned()

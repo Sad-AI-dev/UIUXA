@@ -28,7 +28,7 @@ public class Scaler : MonoBehaviour
     private void ScaleToTarget()
     {
         rt.localScale = Vector2.MoveTowards(rt.localScale, targetScale, scaleSpeed * Time.deltaTime);
-        if (Vector2.Distance(rt.localScale, targetScale) < 0.1f) { scaling = false; }
+        if (Vector2.Distance(rt.localScale, targetScale) < 0.01f) { scaling = false; }
     }
 
     public void ScaleToMax()

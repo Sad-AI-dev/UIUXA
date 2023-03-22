@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dc6454a7b2b22846b81256a4d2231fc, type: 3}
+  m_Name: Card 4
+  m_EditorClassIdentifier: 
+  rarity: 3
+  title: Plasma Burster
+  sprite: {fileID: 0}
+  description: Deals <color=#ED61A5>2 damage</color> when played. Deals an additional
+    <color=#ED61A5>1 damage</color> on the end of each turn
+  power: 5
+  health: 7

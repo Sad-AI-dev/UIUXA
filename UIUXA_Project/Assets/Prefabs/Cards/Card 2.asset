@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5dc6454a7b2b22846b81256a4d2231fc, type: 3}
-  m_Name: Card1
+  m_Name: Card 2
   m_EditorClassIdentifier: 
-  title: hello
+  rarity: 1
+  title: Slash
   sprite: {fileID: 0}
-  description: says hello to someone
-  power: 1
+  description: Deals <color=#ED61A5>5 damage</color> to random enemy card
+  power: 3
   health: 2

@@ -12,14 +12,18 @@ public class CollectionBuilder : MonoBehaviour
     [SerializeField] private CardSO[] cardDatas;
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private int minCards = 3, maxCards = 10;
+    [SerializeField] private int maxCardsPerRow = 7;
     [SerializeField] private float ownedPercent = 0.5f;
 
     [Header("Refs")]
     [SerializeField] private TMP_Text nameLabel;
-    [SerializeField] private Transform cardHolder;
+    [SerializeField] private RectTransform cardHolder;
+
+    private RectTransform rt;
 
     private void Start()
     {
+        rt = GetComponent<RectTransform>();
         if (setName) { SetupName(); }
         BuildCards();
     }
@@ -33,6 +37,7 @@ public class CollectionBuilder : MonoBehaviour
     private void BuildCards()
     {
         int desiredCount = Random.Range(minCards, maxCards);
+        ScaleCheck(desiredCount);
         for (int i = 0; i < desiredCount; i++) {
             GameObject gO = Instantiate(cardPrefab, cardHolder);
             //set card data
@@ -42,6 +47,15 @@ public class CollectionBuilder : MonoBehaviour
             if (Random.Range(0f, 1f) > ownedPercent) {
                 card.ShowUnowned();
             }
+        }
+    }
+
+    private void ScaleCheck(int desiredAmount)
+    {
+        float incrementSize = rt.sizeDelta.y + cardHolder.sizeDelta.y + 25;
+        while (desiredAmount > maxCardsPerRow) {
+            rt.sizeDelta += new Vector2(0, incrementSize);
+            desiredAmount -= maxCardsPerRow;
         }
     }
 }
