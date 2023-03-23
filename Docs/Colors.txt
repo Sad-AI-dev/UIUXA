@@ -5,6 +5,8 @@ white:		#FFFFFF
 blue:		#21AEED
 pink:		#ED61A5
 
+Card Border:	#355173
+
 ==Rarity Colors==
 5 star:		#FF9B49
 4 star:		#BA49FF

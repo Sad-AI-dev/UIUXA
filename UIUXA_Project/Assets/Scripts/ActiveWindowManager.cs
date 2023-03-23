@@ -27,13 +27,18 @@ public class ActiveWindowManager : MonoBehaviour
         windowStack.Push(target);
         currentWindow = target;
     }
+    public void OpenPopup(GameObject popup)
+    {
+        popup.SetActive(true);
+        windowStack.Push(popup);
+        currentWindow = popup;
+    }
 
     public void ReturnToLastScreen()
     {
         if (windowStack.Count > 1) { windowStack.Pop(); }
         SetWindowActive(windowStack.Peek());
         currentWindow = windowStack.Peek();
-
     }
 
     //------------switch screen--------------

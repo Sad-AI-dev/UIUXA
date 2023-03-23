@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Scaler : MonoBehaviour
 {
@@ -16,6 +17,10 @@ public class Scaler : MonoBehaviour
     {
         rt = GetComponent<RectTransform>();
         minScale = rt.localScale;
+        //auto reset...?
+        if (TryGetComponent(out Button btn)) {
+            btn.onClick.AddListener(ScaleToMin);
+        }
     }
 
     private void Update()
