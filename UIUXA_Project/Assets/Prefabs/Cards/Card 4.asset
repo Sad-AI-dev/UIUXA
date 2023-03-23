@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rarity: 3
   title: Plasma Burster
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 917be826deb695841a13d88e687ef54f, type: 3}
   description: Deals <color=#ED61A5>2 damage</color> when played. Deals an additional
     <color=#ED61A5>1 damage</color> on the end of each turn
   power: 5

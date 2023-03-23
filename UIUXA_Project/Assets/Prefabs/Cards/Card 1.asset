@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc6454a7b2b22846b81256a4d2231fc, type: 3}
   m_Name: Card 1
   m_EditorClassIdentifier: 
+  rarity: 0
   title: hello
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: f8b3159ef528ee64eb7142182bcb790f, type: 3}
   description: says hello to someone
   power: 1
   health: 2

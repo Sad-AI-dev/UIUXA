@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rarity: 4
   title: The Glypnos Ruler
-  sprite: {fileID: 0}
+  sprite: {fileID: 2018218767, guid: 473780f095b92fe4ea93fbabd45318a7, type: 3}
   description: Deals <color=#ED61A5>double damage</color>. Requires <color=#ED61A5>1
     sacrifice</color> each turn to sustain.
   power: 6
