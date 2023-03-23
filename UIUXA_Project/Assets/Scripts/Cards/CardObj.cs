@@ -20,6 +20,7 @@ public class CardObj : MonoBehaviour
 
     public void Start()
     {
+        InitializeButton();
         if (cardData) { BuildCard(); }
     }
 
@@ -47,5 +48,16 @@ public class CardObj : MonoBehaviour
     public void ShowUnowned()
     {
         unownedOverlay.SetActive(true);
+    }
+
+    //============== handle click ==================
+    private void InitializeButton()
+    {
+        GetComponent<Button>().onClick.AddListener(OnInspect);
+    }
+
+    private void OnInspect()
+    {
+        CardPopupManager.instance.ShowCardPopup(cardData);
     }
 }
